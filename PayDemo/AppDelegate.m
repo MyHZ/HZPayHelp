@@ -17,8 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
     return YES;
+}
+
+- (void)SetUpWXPayAndAliPay
+{
+    NSString *wxId = @"";
+    [[HZPayShareInstance sharedInstance] registerApp:wxId];
+    NSString *ALiPayScheme = @"";
+    [[HZPayShareInstance sharedInstance] setUpAlipaySchemeStr:ALiPayScheme];
 }
 
 #pragma mark - 处理微信 qq 支付宝返回的请求
